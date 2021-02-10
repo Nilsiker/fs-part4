@@ -12,6 +12,11 @@ usersRouter.get('/', async (request, response) => {
     }
 })
 
+usersRouter.delete('/', async (request, response) => {
+    await User.deleteMany({})
+    return response.status(200).end()
+})
+
 
 usersRouter.post('/', async (request, response) => {
     const body = request.body
